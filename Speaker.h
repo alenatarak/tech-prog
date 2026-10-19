@@ -1,10 +1,11 @@
 #pragma once
-#include "Base.h"
 #include <string>
+#include "Base.h"
 
 class Speaker final : public Base {
     std::string fullName_, organization_, report_, annotation_;
-public:
+
+   public:
     Speaker();
     Speaker(const std::string& name, const std::string& organization,
             const std::string& report, const std::string& annotation);

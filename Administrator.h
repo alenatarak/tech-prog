@@ -1,12 +1,14 @@
 #pragma once
-#include "Base.h"
 #include <string>
+#include "Base.h"
 
 class Administrator final : public Base {
     std::string fullName_, position_, responsibility_;
-public:
+
+   public:
     Administrator();
-    Administrator(const std::string& name, const std::string& position, const std::string& responsibility);
+    Administrator(const std::string& name, const std::string& position,
+                  const std::string& responsibility);
     Administrator(const Administrator& other);
     Administrator& operator=(const Administrator& other);
     ~Administrator() override;

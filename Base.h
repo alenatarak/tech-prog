@@ -3,7 +3,7 @@
 #include <string>
 
 class Base {
-public:
+   public:
     Base();
     Base(const Base& other);
     Base& operator=(const Base& other);
