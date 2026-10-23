@@ -1,8 +1,8 @@
 #pragma once
 #include <string>
-#include "Base.h"
+#include "Conference.h"
 
-class ProgramItem final : public Base {
+class ProgramItem final : public Conference {
     std::string day_, time_, title_;
 
    public:
@@ -19,7 +19,7 @@ class ProgramItem final : public Base {
     void setTime(const std::string& value);
     void setTitle(const std::string& value);
     int type() const override;
-    Base* clone() const override;
+    Conference* clone() const override;
     void input() override;
     void print(std::ostream& out) const override;
     void save(std::ostream& out) const override;

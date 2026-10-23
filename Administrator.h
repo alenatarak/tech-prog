@@ -1,8 +1,8 @@
 #pragma once
 #include <string>
-#include "Base.h"
+#include "Conference.h"
 
-class Administrator final : public Base {
+class Administrator final : public Conference {
     std::string fullName_, position_, responsibility_;
 
    public:
@@ -19,7 +19,7 @@ class Administrator final : public Base {
     void setPosition(const std::string& value);
     void setResponsibility(const std::string& value);
     int type() const override;
-    Base* clone() const override;
+    Conference* clone() const override;
     void input() override;
     void print(std::ostream& out) const override;
     void save(std::ostream& out) const override;

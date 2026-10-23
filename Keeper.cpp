@@ -21,7 +21,7 @@ Keeper::Keeper(int capacity) : Keeper() {
 void Keeper::reserve(int n) {
     if (n <= capacity_)
         return;
-    Base** next = new Base* [n] {
+    Conference** next = new Conference* [n] {
     };
     for (int i = 0; i < size_; ++i)
         next[i] = items_[i];
@@ -61,7 +61,7 @@ Keeper::~Keeper() {
 int Keeper::size() const {
     return size_;
 }
-void Keeper::add(const Base& item) {
+void Keeper::add(const Conference& item) {
     if (size_ == capacity_)
         reserve(capacity_ == 0 ? 2 : capacity_ * 2);
     items_[size_] = item.clone();
@@ -75,12 +75,12 @@ void Keeper::remove(int index) {
         items_[i] = items_[i + 1];
     items_[--size_] = nullptr;
 }
-Base& Keeper::at(int index) {
+Conference& Keeper::at(int index) {
     if (index < 0 || index >= size_)
         throw std::out_of_range("Номер объекта вне допустимого диапазона");
     return *items_[index];
 }
-const Base& Keeper::at(int index) const {
+const Conference& Keeper::at(int index) const {
     if (index < 0 || index >= size_)
         throw std::out_of_range("Номер объекта вне допустимого диапазона");
     return *items_[index];
@@ -134,7 +134,7 @@ void Keeper::load(const std::string& filename) {
         int type = 0;
         in >> type;
         verifyStream(in);
-        std::unique_ptr<Base> object;
+        std::unique_ptr<Conference> object;
         switch (type) {
             case 1:
                 object.reset(new Speaker());
@@ -151,7 +151,7 @@ void Keeper::load(const std::string& filename) {
         object->load(in);
         temporary.add(*object);
     }
-    // Ensure there is no non-whitespace content after the last record.
+    
     in >> std::ws;
     if (!in.eof())
         throw std::runtime_error("Лишние данные в конце файла");

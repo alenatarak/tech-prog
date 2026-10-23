@@ -7,7 +7,7 @@ void validate(const std::string& s) {
     if (s.empty())
         throw std::invalid_argument("Поле не может быть пустым");
 }
-}  // namespace
+}  
 Administrator::Administrator() {
     std::cout << "[Администрация] конструктор без параметров\n";
 }
@@ -19,7 +19,7 @@ Administrator::Administrator(const std::string& n, const std::string& p,
     std::cout << "[Администрация] конструктор с параметрами\n";
 }
 Administrator::Administrator(const Administrator& a)
-    : Base(a),
+    : Conference(a),
       fullName_(a.fullName_),
       position_(a.position_),
       responsibility_(a.responsibility_) {
@@ -60,7 +60,7 @@ void Administrator::setResponsibility(const std::string& s) {
 int Administrator::type() const {
     return 2;
 }
-Base* Administrator::clone() const {
+Conference* Administrator::clone() const {
     return new Administrator(*this);
 }
 void Administrator::input() {

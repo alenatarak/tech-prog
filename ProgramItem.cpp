@@ -7,7 +7,7 @@ void validate(const std::string& s) {
     if (s.empty())
         throw std::invalid_argument("Поле не может быть пустым");
 }
-}  // namespace
+}  
 ProgramItem::ProgramItem() {
     std::cout << "[Программа] конструктор без параметров\n";
 }
@@ -19,7 +19,7 @@ ProgramItem::ProgramItem(const std::string& d, const std::string& t,
     std::cout << "[Программа] конструктор с параметрами\n";
 }
 ProgramItem::ProgramItem(const ProgramItem& p)
-    : Base(p), day_(p.day_), time_(p.time_), title_(p.title_) {
+    : Conference(p), day_(p.day_), time_(p.time_), title_(p.title_) {
     std::cout << "[Программа] конструктор копирования\n";
 }
 ProgramItem& ProgramItem::operator=(const ProgramItem& p) {
@@ -57,7 +57,7 @@ void ProgramItem::setTitle(const std::string& s) {
 int ProgramItem::type() const {
     return 3;
 }
-Base* ProgramItem::clone() const {
+Conference* ProgramItem::clone() const {
     return new ProgramItem(*this);
 }
 void ProgramItem::input() {

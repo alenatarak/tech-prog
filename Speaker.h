@@ -1,8 +1,8 @@
 #pragma once
 #include <string>
-#include "Base.h"
+#include "Conference.h"
 
-class Speaker final : public Base {
+class Speaker final : public Conference {
     std::string fullName_, organization_, report_, annotation_;
 
    public:
@@ -21,7 +21,7 @@ class Speaker final : public Base {
     void setReport(const std::string& value);
     void setAnnotation(const std::string& value);
     int type() const override;
-    Base* clone() const override;
+    Conference* clone() const override;
     void input() override;
     void print(std::ostream& out) const override;
     void save(std::ostream& out) const override;

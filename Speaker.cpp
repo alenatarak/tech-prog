@@ -20,7 +20,7 @@ Speaker::Speaker(const std::string& n, const std::string& o,
     std::cout << "[Выступающий] конструктор с параметрами\n";
 }
 Speaker::Speaker(const Speaker& s)
-    : Base(s),
+    : Conference(s),
       fullName_(s.fullName_),
       organization_(s.organization_),
       report_(s.report_),
@@ -70,7 +70,7 @@ void Speaker::setAnnotation(const std::string& s) {
 int Speaker::type() const {
     return 1;
 }
-Base* Speaker::clone() const {
+Conference* Speaker::clone() const {
     return new Speaker(*this);
 }
 void Speaker::input() {

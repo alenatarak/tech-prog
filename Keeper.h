@@ -1,9 +1,9 @@
 #pragma once
 #include <string>
-#include "Base.h"
+#include "Conference.h"
 
 class Keeper {
-    Base** items_;
+    Conference** items_;
     int size_;
     int capacity_;
     void reserve(int capacity);
@@ -16,10 +16,10 @@ class Keeper {
     Keeper& operator=(const Keeper& other);
     ~Keeper();
     int size() const;
-    void add(const Base& item);
+    void add(const Conference& item);
     void remove(int index);
-    Base& at(int index);
-    const Base& at(int index) const;
+    Conference& at(int index);
+    const Conference& at(int index) const;
     void clear();
     void printAll() const;
     void save(const std::string& filename) const;
