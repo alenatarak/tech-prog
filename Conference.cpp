@@ -10,5 +10,5 @@ Conference& Conference::operator=(const Conference&) {
     return *this;
 }
 Conference::~Conference() {
-    std::cout << "[Класс Конференция] деструктор\n";
+    std::cout << "[Класс Конференция]- деструктор\n";
 }
